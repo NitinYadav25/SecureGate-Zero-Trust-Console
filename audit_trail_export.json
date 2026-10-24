@@ -1,0 +1,82 @@
+[
+  {
+    "id": "aud-001",
+    "timestamp": "2026-10-23T05:38:22Z",
+    "actor": {
+      "name": "Elena Rostova",
+      "email": "elena.rostova@securegate.io",
+      "role": "Principal Architect",
+      "ip": "198.51.100.14"
+    },
+    "eventType": "ACCESS_PERMITTED",
+    "targetApp": "HashiCorp Vault Production",
+    "outcome": "allowed",
+    "reason": "Zero-Trust validation successful with FIDO2 WebAuthn credential",
+    "policyEvaluated": "pol-secops-crit",
+    "mfaVerified": true
+  },
+  {
+    "id": "aud-002",
+    "timestamp": "2026-10-23T05:35:10Z",
+    "actor": {
+      "name": "Arun Patel",
+      "email": "arun.patel@securegate.io",
+      "role": "Platform Engineer",
+      "ip": "203.0.113.88"
+    },
+    "eventType": "ACCESS_PERMITTED",
+    "targetApp": "Kubernetes Production Control Plane",
+    "outcome": "allowed",
+    "reason": "Authenticated via Authenticator App (TOTP) under Platform Policy",
+    "policyEvaluated": "pol-platform-eng",
+    "mfaVerified": true
+  },
+  {
+    "id": "aud-003",
+    "timestamp": "2026-10-23T05:31:04Z",
+    "actor": {
+      "name": "Arun Patel",
+      "email": "arun.patel@securegate.io",
+      "role": "Platform Engineer",
+      "ip": "203.0.113.88"
+    },
+    "eventType": "ACCESS_DENIED_MFA",
+    "targetApp": "HashiCorp Vault Production",
+    "outcome": "denied",
+    "reason": "MFA Tier Mismatch: FIDO2 Hardware Key required by policy; Authenticator App (TOTP) is insufficient",
+    "policyEvaluated": "pol-secops-crit",
+    "mfaVerified": false
+  },
+  {
+    "id": "aud-004",
+    "timestamp": "2026-10-23T05:28:44Z",
+    "actor": {
+      "name": "External Vendor Auditor",
+      "email": "auditor@external-contractors.org",
+      "role": "Third-Party Auditor",
+      "ip": "192.0.2.77"
+    },
+    "eventType": "ACCESS_DENIED_UNAUTHORIZED",
+    "targetApp": "Kubernetes Production Control Plane",
+    "outcome": "denied",
+    "reason": "Zero-Trust Default Deny triggered: Actor role and domain not authorized by pol-platform-eng",
+    "policyEvaluated": "pol-platform-eng",
+    "mfaVerified": false
+  },
+  {
+    "id": "aud-005",
+    "timestamp": "2026-10-23T04:12:02Z",
+    "actor": {
+      "name": "Arun Patel",
+      "email": "arun.patel@securegate.io",
+      "role": "Platform Engineer",
+      "ip": "203.0.113.88"
+    },
+    "eventType": "ACCESS_DENIED_TUNNEL_DOWN",
+    "targetApp": "Tokyo Regional Redis & DB Console",
+    "outcome": "denied",
+    "reason": "Fail-Closed Guard: Tunnel 'tun-apac-01' is disconnected. Direct origin IP fallback blocked.",
+    "policyEvaluated": "pol-platform-eng",
+    "mfaVerified": true
+  }
+]
