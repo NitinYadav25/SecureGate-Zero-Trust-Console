@@ -1,0 +1,28 @@
+# ==============================================================================
+# SecureGate — Zero-Trust Administrative Gateway Console
+# IBM CyberSecurity BootCamp 2026 Internship Project
+# Student / Author: Nitin Yadav
+# ==============================================================================
+
+# Core Data Modeling & Type Validation (Zod equivalent in Python)
+pydantic>=2.0.0
+typing-extensions>=4.8.0
+
+# Security, Network Verification & Identity Utilities
+python-dateutil>=2.8.2
+requests>=2.28.0
+
+# Data Analysis & Telemetry Processing
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Security Posture Dashboard & Visualizations
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tabulate>=0.9.0
+
+# Interactive Jupyter Notebook Environment
+jupyter>=1.0.0
+ipykernel>=6.25.0
+notebook>=7.0.0
+ipywidgets>=8.1.0
